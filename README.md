@@ -1,4 +1,4 @@
-# Minecraft stats visualizer  
+# Minecraft Stats Analyzer 
 
 ![Minecraft](https://icon-library.com/images/minecraft-logo-icon/minecraft-logo-icon-21.jpg)  
 
