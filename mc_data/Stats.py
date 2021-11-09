@@ -27,19 +27,23 @@ class Stats():
     """
     def __init__(self,
     path=os.path.abspath("../stats"),
-    user:str=None):
+    user:str=None,
+    verbose:bool=False):
 
+        self.verbose = verbose
         try:
             for i in os.listdir(path):
                 if "-" in i:
                     new_name = i.replace("-", "")
                     os.rename("{0}/{1}".format(path, i), "{0}/{1}".format(path, new_name))
-                    logging.info(f"File format of {i} corrected.")        
+                    if verbose:
+                        logging.info(f"File format of {i} corrected.")        
 
         except Exception as e:
-            logging.info(e)
-            logging.info("This usually means that your files are already corrected.")
-
+            if verbose:
+                logging.info(e)
+                logging.info("This usually means that your files are already corrected.")
+            pass
 
         if user:
             uuid = requests.get(f"https://api.minetools.eu/uuid/{user}").json()["id"]
@@ -63,7 +67,9 @@ class Stats():
                         player_data[f"{player_name}"] = player
             
                 else:
-                    logging.info(f"Non json file - {i}\nSkipping...")
+                    if verbose:
+                        logging.info(f"Non json file - {i}\nSkipping...")
+                    pass
 
             self.player_data = player_data
             self.player_names = player_names
@@ -104,6 +110,11 @@ class Stats():
         end_result = []
 
         for i in data:
-            end_result.append({i: data[i]["stats"][data_type]})
-        
+            if data_type in data[i]["stats"]:
+                end_result.append({i: data[i]["stats"][data_type]})
+            else:
+                if self.verbose:
+                    logging.info(f"{i} hasn't {data_type}")
+                pass
+
         return end_result
