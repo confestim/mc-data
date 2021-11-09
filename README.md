@@ -6,6 +6,13 @@
 
 Tool to create graphs and analyze Minecraft stats
 
-**With this project, I'll experiment a little, and upload every single idea, plan, schedule, etc. associated with said project.**
+**See a quick demo of the cli application part of this project [over here](https://asciinema.org/a/447891)**   
+*Along with the charts:*
 
-[You can see that over here](https://github.com/podput/mc-data/blob/main/history/history.md)
+![Bar Chart](./history/media/all_dropped_items.png)
+![Pie Chart](./history/media/All_mined_blocks.png)  
+
+
+--------------------------------------------------
+**With this project, I'll experiment a little, and upload every single idea, plan, schedule, etc. associated with said project.**  
+[You can see that over here](.history/history.md)
