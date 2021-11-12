@@ -15,4 +15,4 @@ Tool to create graphs and analyze Minecraft stats
 
 --------------------------------------------------
 **With this project, I'll experiment a little, and upload every single idea, plan, schedule, etc. associated with said project.**  
-[You can see that over here](.history/history.md)
+[You can see that over here](./history/history.md)
